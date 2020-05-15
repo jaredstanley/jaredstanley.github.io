@@ -14,7 +14,7 @@ footer{
     align-items: center;
     font-family: 'Roboto', sans-serif;
     text-transform: uppercase;
-    background-color: #9f06c5;
+    /* background-color: #9f06c5; */
 }
 
 header svg{
@@ -24,9 +24,11 @@ header svg{
 header h1{
     display: flex;
     font-size: 88px;
+    z-index: 10;
 }
 
-    #primary{
-        background: firebrick;
-        position: absolute;
-    } 
+#primary{
+    background: firebrick;
+    position: absolute;
+    z-index: -100;
+} 

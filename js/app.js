@@ -5,9 +5,10 @@ let _App = {
   init: function(){
     console.log("app loaded");
     
-    // this.primaryCTX = document.querySelector("#primary").getContext("2d");
+    this.primaryCTX = document.querySelector("#primary").getContext("2d");
     // this.secondaryCTX = document.querySelector("#secondary").getContext("experimental-webgl");
-    // this.context = this.primaryCTX;
+    this.context = this.primaryCTX;
+    _App.updateSize();
         
   },
 
@@ -19,11 +20,11 @@ let _App = {
   updateSize: function(e){
     // e = e || window.event;
 
-    // _App.primaryCTX.canvas.width = document.documentElement.clientWidth;
-    // _App.primaryCTX.canvas.height = document.documentElement.clientHeight;
+    _App.primaryCTX.canvas.width = document.documentElement.clientWidth;
+    _App.primaryCTX.canvas.height = document.documentElement.clientHeight;
     
-    //  _App.w = _App.context.canvas.width;
-    // _App.h = _App.context.canvas.height;
+     _App.w = _App.context.canvas.width;
+    _App.h = _App.context.canvas.height;
     // progressBar.init();
     
   }
