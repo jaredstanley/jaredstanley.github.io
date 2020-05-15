@@ -1,0 +1,32 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: #222222;
+}
+
+
+header, 
+footer{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    background-color: #9f06c5;
+}
+
+header svg{
+    position: absolute;
+}
+
+header h1{
+    display: flex;
+    font-size: 88px;
+}
+
+    #primary{
+        background: firebrick;
+        position: absolute;
+    } 

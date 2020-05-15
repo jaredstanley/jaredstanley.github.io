@@ -4,11 +4,24 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --progress -p",
+    "watch": "webpack --progress --watch",
+    "start": "webpack-dev-server --open --host 0.0.0.0 --https"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jaredstanley/jaredstanley.github.io.git"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "bable-loader": "0.0.1-security",
+    "three": "^0.110.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.1.4"
   },
   "keywords": [],
   "author": "",
