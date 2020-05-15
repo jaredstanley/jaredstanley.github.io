@@ -28,7 +28,12 @@ header h1{
 }
 
 #primary{
-    background: firebrick;
+    background:#2283b2;
     position: absolute;
     z-index: -100;
 } 
+
+.st0{
+    fill:white;
+    opacity: 0.2;
+}
