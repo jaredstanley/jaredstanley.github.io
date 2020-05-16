@@ -1,14 +1,9 @@
-import * as THREE from 'three';
+import Section from './Section';
 
 
 let _App = {
   init: function(){
     console.log("app loaded");
-    
-    this.primaryCTX = document.querySelector("#primary").getContext("2d");
-    // this.secondaryCTX = document.querySelector("#secondary").getContext("experimental-webgl");
-    this.context = this.primaryCTX;
-    _App.updateSize();
         
   },
 
@@ -18,15 +13,22 @@ let _App = {
   },
   //
   updateSize: function(e){
-    // e = e || window.event;
+    e = e || window.event;
 
-    _App.primaryCTX.canvas.width = document.documentElement.clientWidth;
-    _App.primaryCTX.canvas.height = document.documentElement.clientHeight;
+    if(_App.ctx != undefined){
+      _App.ctx.canvas.width = document.documentElement.clientWidth;
+      _App.ctx.canvas.height = document.documentElement.clientHeight;
+      
+      _App.w = _App.ctx.canvas.width;
+      _App.h = _App.ctx.canvas.height;
+    }
     
-     _App.w = _App.context.canvas.width;
-    _App.h = _App.context.canvas.height;
-    // progressBar.init();
     
+    
+  },
+  start: function(){
+    let section = new Section();
+    section.init(_App);
   }
 }
 //
@@ -36,6 +38,9 @@ window.onload=function(){
   window.addEventListener("resize", _App.updateSize);
 
   _App.init();
+  _App.updateSize();
+
+  _App.start();
   
 }
 

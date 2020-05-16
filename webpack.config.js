@@ -1,8 +1,10 @@
 // webpack.config.js
 module.exports = {
+  
   entry: './js/app.js',
   output: {
-    filename: './bundle.js'
+    // filename: './bundle.js',
+    filename: './dist/bundle.js',
   },
   module: {
     rules: [
@@ -22,3 +24,5 @@ module.exports = {
     contentBase: './',
   }
 };
+
+

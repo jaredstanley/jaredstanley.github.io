@@ -22,12 +22,13 @@ header svg{
 }
 
 header h1{
+    color: antiquewhite;
     display: flex;
     font-size: 88px;
     z-index: 10;
 }
 
-#primary{
+canvas{
     background:#2283b2;
     position: absolute;
     z-index: -100;
