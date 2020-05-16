@@ -24,7 +24,7 @@ header svg{
 header h1{
     color: antiquewhite;
     display: flex;
-    font-size: 88px;
+    font-size: 2em;
     z-index: 10;
 }
 
@@ -37,4 +37,13 @@ canvas{
 .st0{
     fill:white;
     opacity: 0.2;
+}
+
+#qr{
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+
 }
