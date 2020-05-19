@@ -35,8 +35,8 @@ canvas{
 } 
 
 .st0{
-    fill:white;
-    opacity: 0.2;
+    stroke:antiquewhite;
+    opacity: 0.11;
 }
 
 #qr{

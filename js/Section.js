@@ -2,6 +2,10 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+import { RGBELoader } from 'three/examples/jsm/loaders/RGBELoader';
+import { PMREMGenerator } from 'three/src/extras/PMREMGenerator';
+
+
 
 class Section {
     constructor() {
@@ -13,8 +17,9 @@ class Section {
         
         // console.log("Section.init()", GLTFLoader);
 
-        const scene = new THREE.Scene();    
-        const renderer = new THREE.WebGLRenderer({antialias: true});
+        const scene = new THREE.Scene(); 
+        scene.background = new THREE.Color( 0x333333 );   
+        let renderer = new THREE.WebGLRenderer({antialias: true});
         this.obj = {};
         
         
@@ -24,7 +29,7 @@ class Section {
        
 
         let camera = new THREE.PerspectiveCamera(55, window.innerWidth / window.innerHeight , 1, 10000)
-        camera.position.z = 1000;
+        camera.position.z = 200;
         camera.lookAt(new THREE.Vector3);
         scene.add(camera);
         
@@ -68,12 +73,12 @@ class Section {
 
         render();
 
-        this.initLoader(scene);
+        this.initLoader(scene, renderer);
     }
 
     
 
-    initLoader(scene) {
+    initLoader(scene, renderer) {
 
         console.log("initLoader() ");
 
@@ -87,7 +92,26 @@ class Section {
 	        console.error( error );
         } );
 
-      
+        let rgbeLoader = new RGBELoader();
+        rgbeLoader.setDataType( THREE.UnsignedByteType );
+        // console.log(renderer);
+        
+        let pmremGenerator = new PMREMGenerator(renderer);
+
+        rgbeLoader.load( 'clouds3.hdr', function ( texture ) {
+            console.log("loaded hdr");
+            renderer.toneMappingExposure = 0.6;
+            let envMap = pmremGenerator.fromEquirectangular( texture ).texture;
+
+				// scene.background = envMap;
+				scene.environment = envMap;
+
+				texture.dispose();
+				pmremGenerator.dispose();
+            
+        }, undefined, function ( error ) {
+	        console.error( error );
+        } );
 
     }
    
