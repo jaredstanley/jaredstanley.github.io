@@ -11,7 +11,7 @@ footer{
     height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: top;
     font-family: 'Roboto', sans-serif;
     text-transform: uppercase;
     /* background-color: #9f06c5; */
@@ -29,14 +29,15 @@ header h1{
 }
 
 canvas{
-    background:#2283b2;
+    background-image: linear-gradient(to top, #443333 0%, #222222 100%);
+    /* background-image: linear-gradient(to top, #EBBFBE 0%, #91A8DC 100%); */
     position: absolute;
     z-index: -100;
 } 
 
 .st0{
-    stroke:antiquewhite;
-    opacity: 0.11;
+    fill:antiquewhite;
+    opacity: 0.15;
 }
 
 #qr{
