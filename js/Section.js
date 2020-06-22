@@ -18,44 +18,45 @@ class Section {
         // console.log("Section.init()", GLTFLoader);
 
         const scene = new THREE.Scene(); 
-        scene.background = new THREE.Color( 0x333333 );   
-        let renderer = new THREE.WebGLRenderer({antialias: true});
+        // scene.background = new THREE.Color( 0x333333 );   
+        let renderer = new THREE.WebGLRenderer({antialias: true, alpha:true});
         this.obj = {};
         
-        
+    
         renderer.setSize(window.innerWidth, window.innerHeight);
         let container = document.querySelector("header");
         container.appendChild(renderer.domElement)
        
 
         let camera = new THREE.PerspectiveCamera(55, window.innerWidth / window.innerHeight , 1, 10000)
-        camera.position.z = 200;
+        camera.position.z = 1200;
         camera.lookAt(new THREE.Vector3);
         scene.add(camera);
         
-        let light = new THREE.PointLight( 0xffffbb, 2, 0, 2);
-        scene.add( light );
+            // const light0 = new THREE.PointLight( 0xffffbb, 2, 0, 2);
+            // scene.add( light0 );
 
-        const hemiLight = new THREE.HemisphereLight();
-            hemiLight.name = 'hemi_light';
-            scene.add(hemiLight);
-            
-            
-        
+            // const light4 = new THREE.HemisphereLight();
+            //     light4.name = 'hemi_light';
+            //     scene.add(light4);
 
-        const light1  = new THREE.AmbientLight(0x00ffff,2);
-        light1.name = 'ambient_light';
-        camera.add( light1 );
+            // const light1  = new THREE.AmbientLight(0x00ffff,2);
+            // light1.name = 'ambient_light';
+            // camera.add( light1 );
 
-        const light2  = new THREE.DirectionalLight(0xffffff,1);
-        light2.position.set(10, 0, 0.866);
-        camera.add( light2 );
+            // const light2  = new THREE.DirectionalLight(0xffffff,2);
+            // light2.position.set(10, 0, 0.866);
+            // camera.add( light2 );
+
+            // const light3  = new THREE.DirectionalLight(0xffffff,1);
+            // light3.position.set(110, -100, 100);
+            // camera.add( light3 );
 
         let controls = new OrbitControls(camera, container);
-        controls.enableDamping = true; // an animation loop is required when either damping or auto-rotation are enabled
+        controls.enableDamping = true; 
         controls.dampingFactor = 0.09;
         controls.autoRotate = true;
-        controls.autoRotateSpeed = 0.5;
+        controls.autoRotateSpeed = 0.3;
 
         controls.screenSpacePanning = false;
 
@@ -84,6 +85,7 @@ class Section {
 
         let loader = new GLTFLoader();
         loader.obj = this.obj;
+        // loader.load( 'jp.gltf', function ( gltf ) {
         loader.load( 'component.glb', function ( gltf ) {
             
             scene.add( gltf.scene );
@@ -100,7 +102,7 @@ class Section {
 
         rgbeLoader.load( 'clouds3.hdr', function ( texture ) {
             console.log("loaded hdr");
-            renderer.toneMappingExposure = 0.6;
+            renderer.toneMappingExposure = 1.49;
             let envMap = pmremGenerator.fromEquirectangular( texture ).texture;
 
 				// scene.background = envMap;

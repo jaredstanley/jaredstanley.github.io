@@ -11,8 +11,8 @@ footer{
     height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: top;
-    font-family: 'Roboto', sans-serif;
+    align-items: top; 
+    font-family: 'Arimo', sans-serif;
     text-transform: uppercase;
     /* background-color: #9f06c5; */
 }
@@ -24,12 +24,13 @@ header svg{
 header h1{
     color: antiquewhite;
     display: flex;
+    padding-top:30px;
     font-size: 2em;
     z-index: 10;
 }
 
 canvas{
-    background-image: linear-gradient(to top, #443333 0%, #222222 100%);
+    background-image: linear-gradient(to top, #000000 0%, #222222 100%);
     /* background-image: linear-gradient(to top, #EBBFBE 0%, #91A8DC 100%); */
     position: absolute;
     z-index: -100;
@@ -37,7 +38,7 @@ canvas{
 
 .st0{
     fill:antiquewhite;
-    opacity: 0.15;
+    opacity: 0.0;
 }
 
 #qr{
