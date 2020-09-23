@@ -8,7 +8,7 @@
 
 header, 
 footer{
-    height: 100vh;
+    height: 200vh;
     display: flex;
     justify-content: center;
     align-items: top; 
@@ -22,7 +22,7 @@ header svg{
 }
 
 header h1{
-    color: antiquewhite;
+    color: rgb(63, 63, 63);
     display: flex;
     padding-top:30px;
     font-size: 2em;
@@ -30,7 +30,7 @@ header h1{
 }
 
 canvas{
-    background-image: linear-gradient(to top, #000000 0%, #222222 100%);
+    background-image: linear-gradient(to top, #d8e2fe 0%, #fce5e6 100%);
     /* background-image: linear-gradient(to top, #EBBFBE 0%, #91A8DC 100%); */
     position: absolute;
     z-index: -100;

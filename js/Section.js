@@ -102,7 +102,7 @@ class Section {
 
         rgbeLoader.load( 'clouds3.hdr', function ( texture ) {
             console.log("loaded hdr");
-            renderer.toneMappingExposure = 1.49;
+            renderer.toneMappingExposure = 0.96;
             let envMap = pmremGenerator.fromEquirectangular( texture ).texture;
 
 				// scene.background = envMap;
